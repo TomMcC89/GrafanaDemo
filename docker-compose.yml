@@ -1,0 +1,31 @@
+version: '3'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3001:3000"
+    networks:
+      - mynetwork
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+      - ./provisioning:/etc/grafana/provisioning
+      
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: metrics
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_password
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+networks:
+  mynetwork:
