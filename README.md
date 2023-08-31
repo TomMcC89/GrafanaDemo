@@ -16,16 +16,19 @@ Start the Grafana and MySQL containers:
 
 `docker-compose up -d`
 
-Access Grafana:
+2. Populate the Metrics schema:
+A sample script (test-data.sql) can be ran in a MYSQl db client (such as DataGrip, SequelPro, or MySQL workbench) which will populate a metrics.deployments table with sample data including a build_id, timestamp & pass/fail data.
+
+3. Access Grafana:
 
 Open your web browser and go to http://localhost:3001.
 Log in using the admin credentials (Username: admin, Password: admin).
 
-Connect to the MySQL Data Source:
+4. Connect to the MySQL Data Source:
 
 Add a MySQL data source in Grafana by specifying the host as mysql, username, password, and database details as provided in the docker-compose.yml file.
 
-Create Visualizations:
+5. Create Visualizations:
 
 Use Grafana's Query Editor to create dashboards and visualizations based on the "deployments" data.
 
