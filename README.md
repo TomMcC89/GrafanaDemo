@@ -32,6 +32,8 @@ Add a MySQL data source in Grafana by specifying the host as mysql, username, pa
 
 Use Grafana's Query Editor to create dashboards and visualizations based on the "deployments" data.
 
+6. (Optional) Import the QA.json dashboard file via dashboards > new > import.
+
 
 ## Troubleshooting
 1. Connection Issues
